@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="p-5">
+    <h1 id="helloWorld" class="text-3xl font-bold text-sky-600">
+      Hello world!
+    </h1>
+    <input
+      type="text"
+      class="border border-slate-200 rounded-lg px-2 py-1.5"
+      placeholder="Input Nama"
+    />
+    <button
+      type="button"
+      id="btnChange"
+      class="inline-block py-1.5 px-2 bg-green-600 text-white cursor-pointer hover:bg-green-700 rounded mt-5"
+    >
+      Ubah Warna
+    </button>
+    <button
+      type="button"
+      id="btnDisable"
+      class="inline-block py-1.5 px-2 bg-rose-600 text-white cursor-pointer hover:bg-rose-700 rounded mt-5"
+    >
+      Disable Text Input
+    </button>
+    <script>
+      const btnChange = document.querySelector("#btnChange");
+      btnChange.addEventListener("click", () => {
+        const helloWorld = document.querySelector("#helloWorld");
+        helloWorld.classList.remove("text-sky-600");
+        helloWorld.classList.add("text-sky-300");
+      });
+      const btnDisable = document.querySelector("#btnDisable");
+
+      btnDisable.addEventListener("click", () => {
+        const input = document.querySelector("input");
+        btnDisable.textContent = "Sudah Disable";
+        input.disabled = true;
+      });
+      //   btnChange.addEventListener("mouseenter", () => {
+      //     btnChange.textContent = "Kursor Mendekat";
+      //   });
+      //   btnChange.addEventListener("mouseleave", () => {
+      //     btnChange.textContent = "Ubah Warna";
+      //   });
+    </script>
+  </body>
+</html>
