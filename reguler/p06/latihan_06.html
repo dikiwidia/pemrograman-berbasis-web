@@ -28,6 +28,7 @@
     >
       Disable Text Input
     </button>
+    <p id="greeting" class="p-2">Hello</p>
     <script>
       const btnChange = document.querySelector("#btnChange");
       btnChange.addEventListener("click", () => {
@@ -42,6 +43,13 @@
         btnDisable.textContent = "Sudah Disable";
         input.disabled = true;
       });
+
+      const input = document.querySelector("input");
+      input.addEventListener("input", () => {
+        const greeting = document.querySelector("#greeting");
+        greeting.textContent = `Hello ${input.value}`;
+      });
+
       //   btnChange.addEventListener("mouseenter", () => {
       //     btnChange.textContent = "Kursor Mendekat";
       //   });
